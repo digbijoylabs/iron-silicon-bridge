@@ -1,0 +1,14 @@
+[Stage 1: Ingestion & Discovery --- Reference Day 1]
+  ├─ T00: Select bounded batch context (COBOL module)
+  ├─ T08: Archaeologist & Mapper extract AST and dependency DAG
+  └─ T16: Human Domain Lead clears Evidence Gates 1 & 2
+
+[Stage 2: Synthesis & Security Audit --- Reference Day 2]
+  ├─ T24: Extractor Agent generates Java/Spring Boot
+  ├─ T32: Security Reviewer clears Evidence Gate 4
+  └─ T40: Validator synthesizes boundary test suites
+
+[Stage 3: Parity & Shadow Deployment --- Reference Day 3]
+  ├─ T48: Validator asserts mathematical parity (Gate 5)
+  ├─ T56: SRE teams approve deployment runbook (Gate 6)
+  └─ T72: Candidate deployed to production in Shadow Mode

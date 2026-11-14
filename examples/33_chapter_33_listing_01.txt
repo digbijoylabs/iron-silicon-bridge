@@ -1,0 +1,13 @@
+[Legacy COBOL / CICS / VSAM Monolith]
+                 │
+                 ▼
+[Graph Parsing Agent: AST + CFG + PDG Construction]
+                 │
+                 ▼
+[Backward Slicing: Target = Db2 Ledger Mutation]
+       │                               │
+       ▼                               ▼
+[Excised Plumbing]           [Isolated Domain Invariants]
+├─ BMS 3270 Screen Maps      ├─ Compound Accrual Math
+├─ EXEC CICS Task Control    ├─ Tiered Liquidity Math
+└─ VSAM Buffer Alignments    └─ Sovereign Tax Rules

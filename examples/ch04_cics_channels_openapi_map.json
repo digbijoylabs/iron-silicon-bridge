@@ -1,0 +1,18 @@
+/* OpenAPI mapping snippet targeting a legacy CICS program */
+{
+  "paths": {
+    "/ai/inventory/{partNum}": {
+      "post": {
+        "operationId": "updateAIInventoryPrediction",
+        "x-ibm-configuration": {
+          "cics": {
+            "program": "AIINVSCR",
+            "transaction": "AITX",
+            "requestChannel": "AI_PREDICT_CHAN",
+            "requestContainer": "AI_JSON_INPUT"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[Inbound Client Request]
+           │
+           ▼
+┌───────────────────────────────────────────────┐
+│ Envoy Proxy / API Gateway (Strangler Facade)  │
+│  ├─ /api/v1/customers  ──► [Cloud Microservice]
+│  └─ /api/v1/accounts   ──► [Legacy z/OS Core] │
+└───────────────────────┬───────────────────────┘
+                        │
+       ┌────────────────┴────────────────┐
+       ▼                                 ▼
+[Cloud Aurora (Read Copy)]       [IBM z17 (SoR)]

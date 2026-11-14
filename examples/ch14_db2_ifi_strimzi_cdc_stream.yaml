@@ -1,0 +1,13 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaConnector
+metadata:
+  name: smf-elastic-sink
+spec:
+  class: ElasticsearchSinkConnector
+  tasksMax: 10
+  config:
+    topics: "zos.smf.db2.101, zos.smf.vsam.42"
+    connection.url: "http://elastic-cluster:9200"
+    key.ignore: true
+    schema.ignore: false
+    behavior.on.malformed.documents: "warn"

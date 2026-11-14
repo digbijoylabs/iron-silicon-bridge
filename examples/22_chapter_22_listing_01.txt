@@ -1,0 +1,9 @@
+[PyTorch / TensorFlow / ONNX Runtime]
+               │
+               ▼
+[IBM zDNN (IBM Z Deep Neural Network Library)]
+               │
+               ▼
+[NNPA Hardware Instructions] ──► [Telum II On-Chip Accelerator]
+               │
+[PCIe Driver Interface]      ──► [Clustered IBM Spyre PCIe Cards]

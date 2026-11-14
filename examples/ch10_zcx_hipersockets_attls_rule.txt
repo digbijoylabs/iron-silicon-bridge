@@ -1,0 +1,46 @@
+# Reference Blueprint: PAGENT AT-TLS Rule for zCX to Db2
+TTLSRule                      zCX_to_Db2_Secure
+{
+  LocalAddr                   192.168.10.199       #
+  RemotePortRange             446                  #
+  Direction                   Outbound
+  TTLSGroupActionRef          zCX_Group
+  TTLSEnvironmentActionRef    zCX_Env_Client
+}
+TTLSGroupAction               zCX_Group
+{
+  TTLSEnabled                 On                   #
+}
+TTLSEnvironmentAction         zCX_Env_Client
+{
+  HandshakeRole               Client
+  TTLSKeyRingParms
+  {
+    Keyring                   ZCX_AGENT_RING       #
+  }
+}
+
+# Reference Blueprint: Multi-stage s390x Agent Container Build
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest \
+    AS builder                                        #
+USER root
+RUN microdnf install -y \
+    gcc gcc-c++ cmake python3.11 \
+    python3.11-devel python3.11-pip \
+    && microdnf clean all
+RUN python3.11 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt    #
+FROM registry.access.redhat.com/ubi9/ubi-minimal:latest #
+RUN microdnf install -y python3.11 shadow-utils \
+    && microdnf clean all
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH" \
+    PYTHONPATH="/opt/venv/lib/python3.11/site-packages"
+WORKDIR /agent
+COPY src/ ./src/
+RUN useradd -u 1001 -r -s /sbin/nologin zcxuser \
+    && chown -R 1001:1001 /agent
+USER 1001                                                  #
+CMD ["python3.11", "-m", "src.main"]

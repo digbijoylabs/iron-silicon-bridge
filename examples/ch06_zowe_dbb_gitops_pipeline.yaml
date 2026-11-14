@@ -1,0 +1,24 @@
+# Reference Blueprint: Git-to-z/OS CI/CD Pipeline
+name: zOS-Mainframe-Delivery
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v4                      #
+      - name: Install Zowe CLI & Authenticate          #
+        run: |
+          zowe config init --host ${{ secrets.ZOS_HOST }} \
+            --user ${{ secrets.ZOS_USER }}
+
+      - name: Sync Source to USS & Trigger DBB         #
+        run: |
+          zowe zos-files upload dir-to-uss "./src" "/u/src"
+          zowe zos-uss issue ssh "dbb build --hlq AUB.BUILD"
+
+      - name: Run Automated zUnit Tests                #
+        run: zowe zos-workflows start --wait --file zunit.xml
+
+      - name: Refresh CICS Program In-Memory           #
+        run: zowe cics refresh program AUBACCT --region AUBDEV1

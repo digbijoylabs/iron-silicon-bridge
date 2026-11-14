@@ -1,0 +1,18 @@
+[Inbound JSON Request]
+         │
+         ▼
+┌───────────────────────────────────────────────┐
+│ Enterprise API Gateway (z/OS Connect / zCX)    │
+│  ├─ JSON Validation Failure  ──> [HTTP 400]   │
+│  ├─ EBCDIC Translation Trap  ──> [HTTP 422]   │
+│  └─ COMP-3 Packing Check     ──> [HTTP 400]   │
+└──────────────────────┬────────────────────────┘
+                       │ Validated Channel/Container
+                       ▼
+┌───────────────────────────────────────────────┐
+│ CICS Transaction Server (z17 / z/OS)          │
+│  ├─ S0C7 Data Exception (Corrupted Packed Dec)│
+│  ├─ S0C4 Protection Abend (Memory Bounds Trip)│
+│  ├─ QR TCB Bottleneck (Quasi-Reentrant Lock)  │
+│  └─ Timeout Cascade (AOR Thread Exhaustion)   │
+└───────────────────────────────────────────────┘

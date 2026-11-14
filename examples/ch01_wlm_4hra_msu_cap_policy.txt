@@ -1,0 +1,8 @@
+WLM Service Definition:
+  Service Class: OLTP_BANKING
+    Importance: 1 (Highest)
+    Goal: 95% of transactions complete in < 0.05 seconds
+  
+  Service Class: BATCH_REPORTING
+    Importance: 4 (Low)
+    Goal: Execution Velocity 30%

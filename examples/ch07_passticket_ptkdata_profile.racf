@@ -1,0 +1,15 @@
+// Define PassTicket application profile for AI-CICS gateway
+RDEFINE PTKTDATA AICICSGW -
+   SSIGNON(KEYMASKED(0123456789ABCDEF)) UACC(NONE)
+// Allowing the API server to generate PassTickets for AI agents
+PERMIT IRRPTAUTH.AICICSGW.* CLASS(PTKTDATA) -
+   ID(ZOSCONN) ACCESS(UPDATE)
+SETROPTS RACLIST(PTKTDATA) REFRESH
+
+TTLSRule                      SwarmGatewayRule
+{
+   LocalPortRange             8443
+   Direction                  Inbound
+   TTLSGroupActionRef         Swarm-Group
+   TTLSEnvironmentActionRef   Swarm-Env
+}

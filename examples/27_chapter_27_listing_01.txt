@@ -1,0 +1,11 @@
+POST /api/v1/accounts/transfer HTTP/1.1
+Host: zos-connect.atlasunion.internal:9443
+traceparent: 00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01
+Content-Type: application/json
+Accept: application/json
+
+{
+  "source_account": "12345",
+  "target_account": "67890",
+  "amount": 500.00
+}

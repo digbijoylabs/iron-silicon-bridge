@@ -1,0 +1,22 @@
+RACMAP ID(AUBUSR1) MAP +
+  USERDIDFILTER( +
+    NAME('eleanor.voss@atlasunionbank.com') +
+    REGISTRY('https://sts.windows.net/tenant-id-string/') +
+  ) +
+  WITHLABEL('AUB_ENTRA_MAP')
+
+/* Activate the Identity Mapping Class */
+SETROPTS CLASSACT(IDIDMAP) RACLIST(IDIDMAP)
+
+/* Map Swarm IdP and Agent Subject to RACF functional ID */
+RDEFINE IDIDMAP +
+    IRR.IDMAP.EXACT.https://identity.swarm.corp.agent-774 +
+    ID(AIGWUSR)
+
+/* Map all agents from trusted issuer (Many-to-One) */
+RDEFINE IDIDMAP +
+    IRR.IDMAP.EXACT.https://identity.swarm.internal.corp.* +
+    ID(AIGWUSR)
+
+/* Refresh the in-memory RACF profiles */
+SETROPTS RACLIST(IDIDMAP) REFRESH

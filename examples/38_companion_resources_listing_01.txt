@@ -1,0 +1,12 @@
+iron-silicon-bridge-blueprints/
+├── ch02_airlock/       # Event streaming & idempotency
+├── ch04_crypto_vault/  # CPACF & Crypto Express keys
+├── ch07_jcl_dag/       # JCL parser & DAG generator
+├── ch08_cics_commarea/ # CICS container mappers
+├── ch09_smf_streaming/ # Real-time SMF Kafka bridge
+├── ch13_saf_identity/  # JWT-to-PassTicket proxy
+├── ch19_mcp_zos/       # MCP server for z/OS
+├── ch23_zcx_containers/# s390x Dockerfiles & WLM
+├── ch27_opentelemetry/ # W3C Trace Context propagation
+├── ch29_graphrag_estate/# AST knowledge graph builder
+└── ch32_dual_run/      # Parity verification harness

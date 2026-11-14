@@ -1,0 +1,6 @@
+RACMAP ID(AUBUSR1) MAP +
+  USERDIDFILTER( +
+    NAME('eleanor.voss@atlasunionbank.com') +
+    REGISTRY('https://sts.windows.net/tenant-id-string/') +
+  ) +
+  WITHLABEL('AUB_ENTRA_MAP')

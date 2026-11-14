@@ -1,0 +1,5 @@
+(Prog: ACCT01) ──[:CALLS {type:"DYNAMIC"}]──► (Prog: INTRATE)
+      │                                             │
+ [:INCLUDES]                                     [:READS]
+      ▼                                             ▼
+(Copy: CUSTREC)                                 (Db2: RATES_TAB)

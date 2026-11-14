@@ -1,0 +1,21 @@
+# Reference Blueprint: PAGENT AT-TLS Rule for zCX to Db2
+TTLSRule                      zCX_to_Db2_Secure
+{
+  LocalAddr                   192.168.10.199       #
+  RemotePortRange             446                  #
+  Direction                   Outbound
+  TTLSGroupActionRef          zCX_Group
+  TTLSEnvironmentActionRef    zCX_Env_Client
+}
+TTLSGroupAction               zCX_Group
+{
+  TTLSEnabled                 On                   #
+}
+TTLSEnvironmentAction         zCX_Env_Client
+{
+  HandshakeRole               Client
+  TTLSKeyRingParms
+  {
+    Keyring                   ZCX_AGENT_RING       #
+  }
+}

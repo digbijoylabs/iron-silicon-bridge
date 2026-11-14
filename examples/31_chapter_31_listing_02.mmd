@@ -1,0 +1,14 @@
+graph LR
+    subgraph zOS [Mainframe z/OS]
+        CICS[CICS TS] --> DB2[(Db2)] & VSAM[(VSAM)]
+        DB2 --> CDC1[Db2 CDC Agent]
+        VSAM --> CDC2[VSAM CDC Agent]
+    end
+    subgraph EventMesh [Streaming Platform]
+        KAFKA[Kafka Event Bus]
+    end
+    subgraph Cloud [Cloud Environment]
+        SVC[Cloud Microservice] --> AURORA[(Aurora PostgreSQL)]
+    end
+    CDC1 & CDC2 --> KAFKA
+    KAFKA --> SVC

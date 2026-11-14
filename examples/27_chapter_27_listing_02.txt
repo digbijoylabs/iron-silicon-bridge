@@ -1,0 +1,17 @@
+<server description="z/OS Connect Server API Gateway">
+    <featureManager>
+        <feature>zosConnect-3.0</feature>
+        <feature>mpTelemetry-2.0</feature>
+    </featureManager>
+
+    <!-- Configure Liberty MP Telemetry 2.0 OTLP Exporter -->
+    <variable name="otel.sdk.disabled" value="false" />
+    <variable name="otel.traces.exporter" value="otlp" />
+    <variable name="otel.exporter.otlp.endpoint"
+              value="http://otel-collector.aub.internal:4317" />
+    <variable name="otel.service.name"
+              value="zos-connect-gateway" />
+
+    <!-- Enable W3C Trace Context for z/OS Connect -->
+    <zosConnectManager tracePropagation="true"/>
+</server>

@@ -1,0 +1,24 @@
+# Reference Blueprint: Co-Located s390x KServe Inference Service
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: z17-fraud-inference                               #
+  namespace: core-banking-ai
+spec:
+  predictor:
+    triton:
+      storageUri: "s3://models-s390x/onnx/fraud_telum2_v1"  #
+      resources:
+        limits:
+          cpu: "8"                                         #
+          memory: "16Gi"
+        requests:
+          cpu: "4"
+          memory: "8Gi"
+      env:
+
+      - name: ONNX_EXECUTION_PROVIDER                      #
+        value: "ZDNN_NNPA_DIRECT"
+
+      - name: TRITON_SERVER_PORT
+        value: "8001"                                      #

@@ -1,0 +1,14 @@
+[Inbound Production Transactions]
+                 │
+                 ▼
+┌───────────────────────────────────────────────┐
+│ Edge Splitter / MQ Interceptor                │
+│  ├─ Live Production Pipe ──► [IBM z17 (SoR)]  │
+│  └─ Shadow Mirror Pipe   ──► [Kafka Replay]   │
+└───────────────────────────────────────┬───────┘
+                                        │
+                                        ▼
+                       [Immutable Golden Master Store]
+                       ├─ Raw Input Payloads
+                       ├─ Host Response Payloads
+                       └─ Db2 Before/After State Diffs

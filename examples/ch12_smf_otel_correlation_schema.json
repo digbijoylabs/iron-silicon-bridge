@@ -1,0 +1,18 @@
+{
+  "graph_schema": {
+    "version": "2.0.0",
+    "nodes": {
+      "Program": {"properties": ["name", "lang", "hash"]}, //
+      "Dataset": {"properties": ["dsn", "org", "recfm"]},  //
+      "Transaction": {"properties": ["tran_id", "target"]}
+    },
+    "edges": {
+      "CALLS": {"source": "Program", "target": "Program",  //
+                "props": ["call_type", "freq"]},
+      "READS": {"source": "Program", "target": "Dataset",
+                "props": ["intent", "volume"]},
+      "MUTATES": {"source": "Program", "target": "DS",    //
+                  "props": ["sql_type", "dd_name"]}
+    }
+  }
+}

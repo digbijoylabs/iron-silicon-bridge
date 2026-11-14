@@ -1,0 +1,13 @@
+[Legacy COBOL / PL/I Source]
+              │
+              ▼
+[Symbolic Compiler (IBM ADATA / ANTLR4 AST)]
+              │  Extracts exact CFG and data dependencies
+              ▼
+[Semantic Extraction Engine (Frontier Reasoning Models)]
+              │  Synthesizes domain entities & rules
+              ▼
+[Candidate Microservice (Java 21 / Go)]
+              │
+              ▼
+[Formal Parity Verification Engine (SMT Solvers / Z3)]

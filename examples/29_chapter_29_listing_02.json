@@ -1,0 +1,11 @@
+{
+  "module_id": "ACCT01",
+  "discovered_rules": [
+    {
+      "rule_id": "BR_OVERDRAFT_01",
+      "condition": "BALANCE < 0 AND CUST_TIER == 'PREMIER'",
+      "action": "WAIVE_FEE",
+      "provenance_lines": "1042-1058"
+    }
+  ]
+}
