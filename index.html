@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Iron–Silicon Bridge: Mainframe Modernization, MIPS-to-Cloud Exit & COMP-3 Workbench</title>
+  <meta name="description" content="Interactive Mainframe Modernization Workbench: 4HRA MSU/MIPS-to-Cloud Exit TCO Estimator, COBOL COMP-3 Packed-Decimal & EBCDIC Hex Decoder, and 6-Gate Agentic Exit Readiness Calculator — Companion to The Iron–Silicon Bridge by Jay Thorne (Digbijoy Labs)." />
+  <meta name="keywords" content="mainframe modernization, COBOL COMP-3 decoder, IBM Z z17 Telum II, CICS TS, Db2 z/OS, VSAM JCL IMS RACF, Strangler Fig, Dual-Run parity, AWS Blu Age, IBM watsonx Code Assistant for Z, Model Context Protocol MCP, Jay Thorne, Digbijoy Labs" />
+  <meta property="og:title" content="The Iron–Silicon Bridge — Interactive Mainframe Exit & COMP-3 Workbench" />
+  <meta property="og:description" content="Model 4HRA MSU-to-Cloud TCO step-downs, inspect COBOL COMP-3 packed-decimal hex bytes, and browse 139 reference blueprints from The Iron–Silicon Bridge by Jay Thorne." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digbijoylabs.github.io/iron-silicon-bridge/" />
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "The Iron–Silicon Bridge Mainframe Modernization Workbench",
+      "url": "https://digbijoylabs.github.io/iron-silicon-bridge/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Jay Thorne" },
+      "publisher": { "@type": "Organization", "name": "Digbijoy Labs", "email": "contact@digbijoylabs.com" }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "The Iron–Silicon Bridge: A Practitioner's Guide to Mainframe Modernization, COBOL, CICS, Db2, and the Agentic Exit Factory",
+      "author": { "@type": "Person", "name": "Jay Thorne" },
+      "publisher": { "@type": "Organization", "name": "Digbijoy Labs" },
+      "bookFormat": ["https://schema.org/EBook", "https://schema.org/Paperback", "https://schema.org/Hardcover"],
+      "numberOfPages": 259,
+      "inLanguage": "en-US",
+      "datePublished": "2026-12-01"
+    }
+  ]
+  </script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --amber: #f2c97d;
+      --green: #3fb950;
+      --blue: #58a6ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 28px 18px 60px;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      color: var(--amber);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    h1 { margin: 8px 0 10px; font-size: 1.8rem; }
+    .subtitle { color: var(--muted); margin: 0 0 16px; }
+    .nav a {
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 6px;
+      padding: 7px 13px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      color: var(--blue);
+      text-decoration: none;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.88rem;
+    }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px;
+    }
+    h2 { margin-top: 0; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    label { display: block; font-size: 0.88rem; color: var(--muted); margin: 12px 0 5px; }
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      background: #090d11;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.95rem;
+    }
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.9rem;
+    }
+    .hl { color: var(--amber); font-weight: 700; }
+    .ok { color: var(--green); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="eyebrow">Digbijoy Labs // The Neural Blueprint — Mainframe Modernization & Exit Workbench</div>
+      <h1>The Iron–Silicon Bridge: MIPS-to-Cloud Exit & COBOL COMP-3 Simulator</h1>
+      <p class="subtitle">Official companion repository &amp; interactive workbench for <strong>The Iron–Silicon Bridge: A Practitioner's Guide to Mainframe Modernization, COBOL, CICS, Db2, and the Agentic Exit Factory</strong> by Jay Thorne (<em>Digbijoy Labs</em>, 7"&times;10", 259 Pages, 36 Architectural Schematics).</p>
+      <div class="nav">
+        <a href="https://github.com/digbijoylabs/iron-silicon-bridge" style="border-color: var(--amber); color: var(--amber); font-weight: 700;">GitHub Blueprint Repository</a>
+        <a href="https://github.com/digbijoylabs/iron-silicon-bridge/tree/main/examples">Browse Ch. 1–18 Reference Blueprints</a>
+        <a href="https://www.youtube.com/@TheNeuralBlueprintLab">The Neural Blueprint (YouTube)</a>
+        <a href="https://digbijoylabs.github.io/beyond-the-prompt/">Beyond the Prompt Workbench</a>
+        <a href="https://digbijoylabs.github.io/the-sovereign-illusion/">AI Supply-Chain Chokepoint Simulator</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>1. Mainframe MIPS / MLC to Agentic Cloud Exit TCO Estimator</h2>
+        <label for="mipsInput">Installed Mainframe Capacity (MIPS)</label>
+        <input id="mipsInput" type="number" value="12000" step="500" oninput="calcExit()" />
+
+        <label for="costPerMips">Annual IBM Z Hardware + MLC Software Cost per MIPS (USD/yr)</label>
+        <input id="costPerMips" type="number" value="2150" step="50" oninput="calcExit()" />
+
+        <label for="cobolLoc">Total Legacy Estate Size (Millions of Lines of COBOL/PL/I)</label>
+        <input id="cobolLoc" type="number" value="15" step="1" oninput="calcExit()" />
+
+        <label for="exitPath">Selected Modernization / Exit Strategy</label>
+        <select id="exitPath" onchange="calcExit()">
+          <option value="agentic" selected>Pathway 4: 2026 Agentic Semantic Refactoring Factory + Dual-Run</option>
+          <option value="manual">Legacy Consulting Manual Rewrite (250 LOC/day human baseline)</option>
+          <option value="rehost">Pathway 1: x86 Binary/COBOL Rehosting (Micro Focus / LzLabs)</option>
+        </select>
+
+        <div style="margin-top: 16px;">
+          <div class="row"><span>Current Annual Mainframe Run-Rate:</span><span id="outCurrentRun">$0 / yr</span></div>
+          <div class="row"><span>Target Cloud Infrastructure Run-Rate:</span><span id="outCloudRun" class="ok">$0 / yr</span></div>
+          <div class="row"><span>Estimated Transformation Duration:</span><span id="outDuration">0 months</span></div>
+          <div class="row"><span>One-Time Factory / Migration Cost:</span><span id="outOneTime">$0</span></div>
+          <div class="row"><span><strong>Net 5-Year Cumulative TCO Savings:</strong></span><span id="outFiveYr" class="hl">$0</span></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2. COBOL COMP-3 (Packed Decimal) to Cloud BigDecimal Encoder/Decoder</h2>
+        <label for="decInput">Signed Decimal Ledger Amount (e.g., -125409.75 or +98450.25)</label>
+        <input id="decInput" type="text" value="-125409.75" oninput="encodeComp3()" />
+
+        <label for="picClause">COBOL Picture Clause Representation</label>
+        <input id="picClause" type="text" value="PIC S9(7)V99 COMP-3" readonly />
+
+        <div style="margin-top: 16px;">
+          <div class="row"><span>Normalized Digit String:</span><span id="outDigits">012540975</span></div>
+          <div class="row"><span>Sign Nibble (C=Pos, D=Neg, F=Unsigned):</span><span id="outSign">D (Negative)</span></div>
+          <div class="row"><span><strong>z/OS EBCDIC COMP-3 Hex Bytes:</strong></span><span id="outHex" class="hl">01 25 40 97 5D</span></div>
+          <div class="row"><span>Storage Footprint (9 digits):</span><span id="outBytes">5 bytes (Formula: ⌊N/2⌋ + 1)</span></div>
+          <div class="row"><span>PostgreSQL / Java Target Type:</span><span class="ok">NUMERIC(9,2) / BigDecimal</span></div>
+          <div class="row"><span>IEEE 754 Float64 Drift Warning:</span><span style="color:#f85149;">NEVER USE DOUBLE/FLOAT FOR COMP-3</span></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel" style="margin-top: 22px;">
+      <h2>3. Three-Movement Book Architecture &amp; Six-Gate Exit Readiness Checklist</h2>
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 16px;">
+        <div style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; background: #090d11;">
+          <div class="eyebrow">Part I &bull; Chapters 1–6</div>
+          <h3 style="margin: 6px 0 8px; font-size: 1.02rem;">The Anatomy of Big Iron</h3>
+          <p style="color: var(--muted); font-size: 0.88rem; margin: 0;">PR/SM LPARs, Parallel Sysplex Coupling Facility XES locks, SCRT 4HRA MSU economics, COBOL COMP-3 &amp; REDEFINES memory layouts, CICS QR/L8 Open TCBs, JES2 batch DAGs, Db2/IMS/VSAM, RACF &amp; SMF telemetry.</p>
+        </div>
+        <div style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; background: #090d11;">
+          <div class="eyebrow">Part II &bull; Chapters 7–10</div>
+          <h3 style="margin: 6px 0 8px; font-size: 1.02rem;">The Governed Hybrid Bridge</h3>
+          <p style="color: var(--muted); font-size: 0.88rem; margin: 0;">OIDC-to-RACF IDIDMAP &amp; PassTicket identity propagation, multi-agent governance triads, z/OS Connect OpenAPI 3.1 &amp; deterministic MCP tool airlocks, Kafka CDC outboxes, and IBM z17 Telum II / Spyre inference.</p>
+        </div>
+        <div style="padding: 14px; border: 1px solid var(--border); border-radius: 8px; background: #090d11;">
+          <div class="eyebrow">Part III &bull; Chapters 11–18</div>
+          <h3 style="margin: 6px 0 8px; font-size: 1.02rem;">The Agentic Exit Factory</h3>
+          <p style="color: var(--muted); font-size: 0.88rem; margin: 0;">SMF-weighted GraphRAG lineage, 5R portfolio triage, PDG program slicing, Z3 concolic equivalence proofs, OpenRewrite LST refactoring, EBCDIC-to-UTF-8 data liberation, Reverse-CDC Strangler Fig, and 30-day Dual-Run parity.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top: 28px; text-align: center; color: var(--muted); font-size: 0.86rem; padding-top: 18px; border-top: 1px solid var(--border);">
+      Published by <strong>Digbijoy Labs</strong> &bull; Author: <strong>Jay Thorne</strong> &bull; Open-Source Blueprints Licensed under Apache-2.0 &bull; Inquiries &amp; Errata: <a href="mailto:contact@digbijoylabs.com" style="color: var(--blue);">contact@digbijoylabs.com</a>
+    </footer>
+  </div>
+
+  <script>
+    function fmtUSD(n) {
+      return "$" + Math.round(n).toLocaleString("en-US");
+    }
+
+    function calcExit() {
+      const mips = parseFloat(document.getElementById("mipsInput").value) || 0;
+      const cpm = parseFloat(document.getElementById("costPerMips").value) || 0;
+      const mloc = parseFloat(document.getElementById("cobolLoc").value) || 1;
+      const mode = document.getElementById("exitPath").value;
+
+      const currentAnnual = mips * cpm;
+      let cloudAnnual = currentAnnual * 0.28;
+      let months = 18;
+      let oneTime = mloc * 1200000;
+
+      if (mode === "agentic") {
+        cloudAnnual = currentAnnual * 0.24;
+        months = Math.max(9, Math.round(8 + mloc * 0.65));
+        oneTime = mloc * 850000;
+      } else if (mode === "manual") {
+        cloudAnnual = currentAnnual * 0.30;
+        months = Math.round(24 + mloc * 2.4);
+        oneTime = mloc * 4200000;
+      } else {
+        cloudAnnual = currentAnnual * 0.42;
+        months = Math.round(6 + mloc * 0.4);
+        oneTime = mloc * 1100000;
+      }
+
+      const yearsActiveCloud = Math.max(0.5, 5 - months / 12);
+      const fiveYrLegacy = currentAnnual * 5;
+      const fiveYrModern = currentAnnual * (months / 12) + cloudAnnual * yearsActiveCloud + oneTime;
+      const netSavings = fiveYrLegacy - fiveYrModern;
+
+      document.getElementById("outCurrentRun").textContent = fmtUSD(currentAnnual) + " / yr";
+      document.getElementById("outCloudRun").textContent = fmtUSD(cloudAnnual) + " / yr";
+      document.getElementById("outDuration").textContent = months + " months (incl. 6-mo Dual-Run Parity)";
+      document.getElementById("outOneTime").textContent = fmtUSD(oneTime);
+      document.getElementById("outFiveYr").textContent = fmtUSD(netSavings);
+    }
+
+    function encodeComp3() {
+      const raw = (document.getElementById("decInput").value || "0").trim();
+      const isNeg = raw.startsWith("-");
+      const isUnsigned = !raw.startsWith("-") && !raw.startsWith("+");
+      const digitsOnly = raw.replace(/[^0-9]/g, "") || "0";
+      const padded = digitsOnly.length % 2 === 0 ? "0" + digitsOnly : digitsOnly;
+      const signNibble = isNeg ? "D" : (isUnsigned ? "C" : "C");
+      const fullHex = padded + signNibble;
+      const bytePairs = [];
+      for (let i = 0; i < fullHex.length; i += 2) {
+        bytePairs.push(fullHex.slice(i, i + 2));
+      }
+      document.getElementById("outDigits").textContent = padded;
+      document.getElementById("outSign").textContent = isNeg ? "0xD (Negative Signed)" : "0xC (Positive Signed)";
+      document.getElementById("outHex").textContent = bytePairs.join(" ");
+      document.getElementById("outBytes").textContent = bytePairs.length + " bytes (COMP-3 packed)";
+    }
+
+    calcExit();
+    encodeComp3();
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# The Iron–Silicon Bridge (Companion Architecture Repository & Workbench)
+
+> Official companion blueprints and interactive simulator for "The Iron–Silicon Bridge: A Practitioner's Guide to Mainframe Modernization, COBOL, CICS, Db2, and the Agentic Exit Factory" by Jay Thorne (Digbijoy Labs, 2026, 259 pages, 7"x10").
+
+## Summary for AI Assistants & Search Engines
+- **Author**: Jay Thorne
+- **Publisher**: Digbijoy Labs (`contact@digbijoylabs.com`)
+- **Interactive Workbench**: https://digbijoylabs.github.io/iron-silicon-bridge/ (Models 4HRA MSU sub-capacity step-downs vs. cloud double-bubble TCO, and decodes COBOL COMP-3 packed-decimal & EBCDIC hex layouts in the browser).
+- **Core Architectural Doctrine**:
+  1. **Part I — The Anatomy of Big Iron (Ch. 1–6)**: PR/SM LPARs, Coupling Facility XES locks, WLM goal scheduling, SCRT 4HRA economics, COBOL COMP-3/REDEFINES, CICS TS 2PC syncpoints, JES2 batch DAGs, Db2, IMS, VSAM, MQ, RACF, and SMF telemetry.
+  2. **Part II — The Governed Hybrid Bridge (Ch. 7–10)**: Connecting multi-agent AI systems to live z/OS ledgers via Model Context Protocol (MCP) deterministic airlocks, z/OS Connect OpenAPI 3.1, OIDC-to-RACF PassTickets, Db2 IFI 0306 Kafka CDC, Saga compensation, and z17 Telum II / Spyre inference.
+  3. **Part III — The Agentic Exit Factory (Ch. 11–18)**: Six-gate neuro-symbolic migration pipeline using SMF-weighted GraphRAG archaeology, PDG slicing, Z3 SMT concolic equivalence proofs, Moderne OpenRewrite Lossless Semantic Trees, EBCDIC-to-UTF-8 data liberation, Strangler Fig Reverse-CDC coexistence, 30-day clock-virtualized Dual-Run shadow parity, EU DORA cutover dossiers, and SCRT MSU decommissioning.
+
+## Key Resources
+- [Interactive Mainframe Exit & COMP-3 Workbench](https://digbijoylabs.github.io/iron-silicon-bridge/)
+- [Machine-Readable Blueprint Catalog](./code_catalog.json)
+- [Chapter Reference Blueprints (139 files)](./examples/)
