@@ -1,0 +1,8 @@
+* Deep Tech Pseudocode for CPACF AES-CBC Encryption via KMC
+* Executed on CPU core, bypassing OS kernel entirely.
+         LA    R1,CRYPTO_BLOCK    * R1: 128-byte block (Key/IV)
+         LA    R2,INPUT_DATA      * R2: plaintext source buffer
+         LA    R3,INPUT_LENGTH    * R3: data length
+         LA    R4,OUTPUT_DATA     * R4: dest ciphertext buffer
+         KMC   R2,R4              * EXEC Cipher Msg w/ Chaining
+         BC    1,ERROR_RTN        * Branch on CC 1 (CPU yield)

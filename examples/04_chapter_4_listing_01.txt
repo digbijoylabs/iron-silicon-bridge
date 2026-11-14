@@ -1,0 +1,12 @@
+/* ICSF Parmlib Configuration Member CSFPRM00 */
+DOMAIN(0)           /* LPAR Crypto Domain */
+CKDSN(CSF.PROD.CSFCKDS)   /* Symmetric Keys */
+PKDSN(CSF.PROD.CSFPKDS)   /* Asymmetric Keys */
+TKDSN(CSF.PROD.CSFTKDS)   /* PKCS#11 Tokens */
+COMPAT(NO)          /* Disable legacy compat */
+SSM(YES)            /* Enable Secure Mode */
+KEYAUTH(YES)        /* Validate tokens via MAC */
+CHECKAUTH(YES)      /* Mandate RACF checks */
+MASTERKCVLEN(7)     /* MKVP length */
+/* Audit all key lifecycle events */
+AUDITKEYLIFECKDS(TOKEN(YES),LABEL(YES))

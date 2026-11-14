@@ -1,0 +1,23 @@
+[Incoming Message]
+                             │
+                             ▼
+                    ┌─────────────────┐
+                    │  Input Queue    │
+                    └────────┬────────┘
+                             │ MQGET
+                             ▼
+                    ┌─────────────────┐
+                    │ Application PGM │◄─── Rollback / Abend
+                    └────────┬────────┘
+                             │
+             Check BackoutCount vs. BOTHRESH
+                             │
+            ┌────────────────┴────────────────┐
+            │                                 │
+    BackoutCount < BOTHRESH           BackoutCount >= BOTHRESH
+            │                                 │
+            ▼                                 ▼
+     [Retry Execution]              ┌───────────────────┐
+                                    │ Backout Queue     │
+                                    │ (BOQNAME)         │
+                                    └───────────────────┘

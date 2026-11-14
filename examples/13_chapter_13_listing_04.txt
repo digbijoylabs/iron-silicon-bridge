@@ -1,0 +1,7 @@
+TTLSRule                      SwarmGatewayRule
+{
+   LocalPortRange             8443
+   Direction                  Inbound
+   TTLSGroupActionRef         Swarm-Group
+   TTLSEnvironmentActionRef   Swarm-Env
+}

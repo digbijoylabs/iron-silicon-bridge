@@ -1,0 +1,5 @@
+/* Example: PL/I pointer memory allocation for SWIFT parsing */
+DCL 1 SWIFT_MSG BASED(P_MSG),
+      2 HEADER CHAR(50),
+      2 BODY   CHAR(2000) VAR;
+ALLOCATE SWIFT_MSG SET(P_MSG);

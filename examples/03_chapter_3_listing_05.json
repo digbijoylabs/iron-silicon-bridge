@@ -1,0 +1,18 @@
+{
+  "saga_id": "tx-99812",
+  "steps": [
+    {
+      "service": "AccountShard_A",
+      "action": "Debit(100)",
+      "compensation": "Credit(100)",
+      "status": "COMPLETED"
+    },
+    {
+      "service": "AccountShard_B",
+      "action": "Credit(100)",
+      "compensation": "Debit(100)",
+      "status": "FAILED_TIMEOUT"
+    }
+  ],
+  "orchestrator_action": "TRIGGER_COMPENSATION_REVERSE_ORDER"
+}

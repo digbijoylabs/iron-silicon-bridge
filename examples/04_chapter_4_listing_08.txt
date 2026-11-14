@@ -1,0 +1,18 @@
+# Reference Blueprint: AT-TLS Inbound AI Gateway Policy
+TTLSEnvironmentAction       ai_swarm_env
+{
+  HandshakeRole             Server              #
+  TTLSKeyRingParms { Keyring ZOSConnectKeyring }#
+  TTLSEnvironmentAdvancedParms {
+    ApplicationControlled   Off                 #
+    TLSv1.3                 On
+    TLSv1.2                 Off
+  }
+}
+TTLSRule                    ai_swarm_inbound_rule
+{
+  LocalPortRange            9443
+  RemoteIPAddr              10.50.0.0/16        #
+  Direction                 Inbound
+  TTLSConnectionAction { ClientAuthType Required } #
+}

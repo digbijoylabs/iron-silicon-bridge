@@ -1,0 +1,18 @@
+* Reference Blueprint: HLASM VSAM Control Block Access Kernel
+MAIN     CSECT
+         OPEN  (MYACB)
+         MODCB RPL=MYRPL,                      <2>X
+               OPTCD=(KEY,DIR,SYN,NUP),        X
+               ARG=KEYADDR,                    X
+               AREA=VSAMBUF
+         GET   RPL=MYRPL
+         LTR   R15,R15
+         BNZ   VSAM_ERR
+         CLOSE (MYACB)
+         BR    R14
+
+* VSAM Control Block Declarations
+MYACB    ACB   AM=VSAM,MACRF=(KEY,DIR,IN)
+MYRPL    RPL   ACB=MYACB,AM=VSAM,AREA=VSAMBUF
+KEYADDR  DS    CL16
+VSAMBUF  DS    CL1024

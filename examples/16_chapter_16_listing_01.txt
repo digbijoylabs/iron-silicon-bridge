@@ -1,0 +1,17 @@
+[AI Swarm Agent]
+      │  mTLS Auth (Task Scope, Score, Agent UUID)
+      ▼
+[Enterprise Identity Broker (Vault / CyberArk)]
+      │  Issues short-lived JWT (TTL = 300s) with custom claims
+      ▼
+[API Gateway (z/OS Connect EE)]
+      │  Validates JWT signature against JWKS
+      │  Maps Agent UUID to Ephemeral RACF PassTicket via EIM
+      ▼
+[z/OS Security Server (RACF)]
+      │  Authenticates PassTicket (Single-use, 60s validity)
+      │  Enforces Dynamic CSDATA Scoping (AUTOLVL=READONLY)
+      ▼
+[CICS Transaction Server / Db2]
+      │  Executes logic under ephemeral agent identity
+      └─ Writes SMF Type 80 Security Record (User = AGENT_042)

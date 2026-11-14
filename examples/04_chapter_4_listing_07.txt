@@ -1,0 +1,12 @@
+/* Reference Blueprint: ICSF CSNBENC Encryption Kernel */
+void encrypt_ssn(char* plaintext, char* ciphertext) {
+    long rc = 0, rsn = 0, exit_len = 0, text_len = 9;  //
+    char exit_data[4] = {0};
+    char key_id[64] = "AI.SWARM.FIELD.KEY.LBL          ";  //
+    /* Direct invocation of ICSF hardware-accelerated encipher */
+    CSNBENC(&rc, &rsn, &exit_len, exit_data, key_id,
+            &text_len, plaintext, &text_len, ciphertext);  //
+    if (rc != 0) {  //
+        trigger_security_alert(rc, rsn);  //
+    }
+}

@@ -1,0 +1,12 @@
+/* Generate a new certificate for AI Bridge Subsystem */
+RACDCERT ID(AIBRIDGE) GENCERT +
+SUBJECTSDN(CN('AI-Bridge-Subsystem') +
+O('Atlas Union Bank') C('US')) +
+WITHLABEL('AI-Bridge-Cert-2027') +
+SIGNWITH(CERTAUTH LABEL('AUB-Internal-Root-CA')) +
+KEYUSAGE(HANDSHAKE) +
+NOTAFTER(DATE(2028-01-01))
+
+/* Connect the certificate to the AT-TLS Keyring */
+RACDCERT ID(AIBRIDGE) CONNECT(LABEL('AI-Bridge-Cert-2027') +
+RING(ZOSConnectKeyring) USAGE(PERSONAL) DEFAULT)

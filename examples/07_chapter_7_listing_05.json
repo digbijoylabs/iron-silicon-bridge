@@ -1,0 +1,12 @@
+{
+  "smf_record": 30,
+  "subtype": 4,
+  "job_name": "ACCTJOB",
+  "step_name": "SORTSTEP",
+  "metrics": {
+    "tcb_cpu_time_ms": 1450,
+    "srb_cpu_time_ms": 210,
+    "excp_count": 45021,
+    "memory_hwm_kb": 16384
+  }
+}

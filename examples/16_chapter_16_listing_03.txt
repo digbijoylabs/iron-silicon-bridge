@@ -1,0 +1,19 @@
+[Inbound API Agent Traffic]
+            │
+            ▼
+┌───────────────────────────────────────────────┐
+│ WLM Service Class Classification Rules        │
+│  ├─ Tenant = AI_AGENT                         │
+│  └─ Enclave Creation: CLASS = AI_SWARM        │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│ WLM Goal Enforcement (z17 Microcode)          │
+│  ├─ Core Banking Batch  ──> Importance 1 (95%)│
+│  ├─ CICS Online ATM     ──> Importance 1 (90%)│
+│  └─ AI Swarm Ingress    ──> Importance 4 (Low)│
+│                                               │
+│ Dynamic Throttle:                             │
+│ If General CP > 85%, suspend AI enclaves.     │
+└───────────────────────────────────────────────┘

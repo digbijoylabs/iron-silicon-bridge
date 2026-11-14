@@ -1,0 +1,8 @@
+01  PAYMENT-DETAIL.
+    05  PAYMENT-TYPE      PIC X(1).
+    05  PAYMENT-INFO.
+        10  CARD-NUM      PIC X(16).
+        10  CARD-EXP      PIC X(4).
+    05  CHECK-INFO REDEFINES PAYMENT-INFO.
+        10  BANK-ROUTING  PIC X(9).
+        10  CHECK-ACCT    PIC X(11).

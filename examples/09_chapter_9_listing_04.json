@@ -1,0 +1,13 @@
+{
+  "traceId": "4bf92f3577b34da6a3ce929d0e0e4736",
+  "spanId": "00f067aa0ba902b7",
+  "parentSpanId": "e2c34a120cb951x8",
+  "name": "DB2_EXECUTE_DYNAMIC",
+  "attributes": {
+    "db.system": "db2",
+    "db.statement": "SELECT * FROM CUST_ACCT WHERE...",
+    "zos.smf.cpu_time_us": 1240,
+    "zos.smf.ziip_time_us": 980,
+    "zos.smf.lpar": "SYSA"
+  }
+}

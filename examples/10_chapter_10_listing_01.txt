@@ -1,0 +1,11 @@
+[External Cloud Traffic]
+                             │
+                             ▼
+                 [Sysplex DVIPA: 10.1.1.100]
+                             │
+            ┌────────────────┴────────────────┐
+            ▼                                 ▼
+   [z/OS LPAR 1 (Active)]            [z/OS LPAR 2 (Target)]
+   ├─ Sysplex Distributor            ├─ Workload Manager (WLM)
+   ├─ WLM Health Feedback ◄──────────┤   (CPU & Buffer State)
+   └─ Forwards TCP Syn to LPAR 2 ────► CICS / MQ Subsystem

@@ -1,0 +1,19 @@
+endpoints:
+
+  - path: /api/v1/legacy/customer
+    methods: [POST]
+    backend:
+      type: zos-connect
+      connection: mainframe-prod
+    data_mapping:
+      request:
+        translation: ASCII_TO_EBCDIC
+        opaque_fields:
+
+          - offset: 60
+            length: 8
+            type: COMP-3
+
+          - offset: 72
+            length: 4
+            type: COMP

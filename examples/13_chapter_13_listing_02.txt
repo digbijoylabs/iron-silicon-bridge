@@ -1,0 +1,10 @@
+* -----------------------------------------------------------
+* CONCEPTUAL RACROUTE INVOCATION IN HLASM
+* -----------------------------------------------------------
+         RACROUTE REQUEST=AUTH,                                X
+               CLASS='CICS',                                   X
+               ENTITY=TRANID,                                  X
+               ATTR=READ,                                      X
+               ACEE=USERACEE,                                  X
+               WORKA=SAFWRK,                                   X
+               MF=S

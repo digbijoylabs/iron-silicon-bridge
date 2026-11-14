@@ -1,0 +1,22 @@
+/* 1. Add the Swarm's external Root CA to RACF */
+RACDCERT CERTAUTH ADD('USER.PROCLIB(SWRMCA)') +
+         WITHLABEL('Swarm Root CA') TRUST
+
+/* 2. Create the SAF Key Ring for the AI Gateway */
+RACDCERT ID(AIGWSTC) ADDRING(SWARMRING)
+
+/* 3. Connect the Swarm CA to the Key Ring */
+RACDCERT ID(AIGWSTC) CONNECT(CERTAUTH LABEL('Swarm Root CA') +
+         RING(SWARMRING) USAGE(CERTAUTH))
+
+/* 4. Generate Mainframe Server Cert signed by internal CA */
+RACDCERT ID(AIGWSTC) GENCERT +
+         SUBJECTSDN(CN('zgw.core.enterprise.internal') +
+         O('Enterprise') C('US')) +
+         WITHLABEL('Gateway Server Cert') +
+         SIGNWITH(CERTAUTH LABEL('Mainframe Internal CA'))
+
+/* 5. Connect Server Cert to Key Ring as default */
+RACDCERT ID(AIGWSTC) +
+         CONNECT(ID(AIGWSTC) LABEL('Gateway Server Cert') +
+         RING(SWARMRING) USAGE(PERSONAL) DEFAULT)

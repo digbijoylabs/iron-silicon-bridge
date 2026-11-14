@@ -1,0 +1,3 @@
+* Example: HLASM register load and branch for system exit
+         L     R15,=V(SECEXIT)    Load address of security exit
+         BALR  R14,R15            Branch and link to exit routine

@@ -1,0 +1,18 @@
+/* Define the profiles for cryptographic services */
+/* ICSF Query Facility - Block reconnaissance */
+RDEFINE CSFSERV CSFIQF UACC(NONE) 
+/* Key Generate - Block unauthorized key creation */
+RDEFINE CSFSERV CSFKGN UACC(NONE) 
+/* Encipher - Block encryption */
+RDEFINE CSFSERV CSFENC UACC(NONE) 
+/* Decipher - Block decryption */
+RDEFINE CSFSERV CSFDEC UACC(NONE) 
+
+/* Permit the AI Bridge API to perform encryption */
+PERMIT CSFENC CLASS(CSFSERV) ID(AIBRIDGE) ACCESS(READ)
+
+/* Deny AI Bridge the ability to decrypt data. */
+PERMIT CSFDEC CLASS(CSFSERV) ID(AIBRIDGE) ACCESS(NONE)
+
+/* Refresh the in-memory RACF profiles to activate */
+SETROPTS RACLIST(CSFSERV) REFRESH
