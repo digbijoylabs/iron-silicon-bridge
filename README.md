@@ -1,5 +1,6 @@
 # The Iron–Silicon Bridge — Companion Blueprint Repository & Mainframe Exit Workbench
 
+[![Amazon KDP](https://img.shields.io/badge/Amazon_Kindle_%26_Print-B0HRP64YPB_%28%244.99_Launch_Promo%29-FF9900?style=for-the-badge)](https://www.amazon.com/dp/B0HRP64YPB)
 [![Live Workbench](https://img.shields.io/badge/Live_Workbench-Mainframe_Exit_%26_COMP--3_Simulator-2ea44f?style=for-the-badge)](https://digbijoylabs.github.io/iron-silicon-bridge/)
 [![License](https://img.shields.io/badge/License-Apache_2.0-D22128?style=for-the-badge)](./LICENSE)
 [![Publisher](https://img.shields.io/badge/Imprint-Digbijoy_Labs-1f6feb?style=for-the-badge)](https://github.com/digbijoylabs)
