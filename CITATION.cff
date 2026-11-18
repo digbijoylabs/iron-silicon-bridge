@@ -1,22 +1,18 @@
 cff-version: 1.2.0
-message: "If you use these architectural blueprints or the Mainframe Exit Workbench, please cite the accompanying book."
-title: "The Iron–Silicon Bridge: A Practitioner's Guide to Mainframe Modernization, COBOL, CICS, Db2, and the Agentic Exit Factory"
+message: "If you use these reference blueprints or the COMP-3 / 4HRA workbench, please cite the book and working paper."
+title: "The Iron-Silicon Bridge: A Practitioner's Guide to Mainframe Modernization, COBOL, CICS, Db2, and the Agentic Exit Factory"
+type: software
 authors:
   - family-names: "Thorne"
     given-names: "Jay"
-    affiliation: "Digbijoy Labs"
-publisher:
-  name: "Digbijoy Labs"
-date-released: "2026-12-01"
-license: "Apache-2.0"
+    affiliation: "Digbijoy Labs Publications"
+doi: "10.5281/zenodo.24243905"
+url: "https://digbijoylabs.com/books/the-iron-silicon-bridge/"
 repository-code: "https://github.com/digbijoylabs/iron-silicon-bridge"
-url: "https://digbijoylabs.github.io/iron-silicon-bridge/"
-keywords:
-  - mainframe modernization
-  - COBOL
-  - CICS
-  - Db2
-  - z/OS
-  - Model Context Protocol
-  - neuro-symbolic migration
-  - Z3 formal verification
+date-released: "2026-11-15"
+license: "MIT"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24243905"
+  - type: url
+    value: "https://www.wikidata.org/wiki/Q142203096"
